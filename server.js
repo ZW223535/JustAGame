@@ -31,5 +31,7 @@ function newConnection(newSocket) {
   newSocket.on("mouse", mouseReceived);
   function mouseReceived(dataReceived) {
     console.log(dataReceived);
+
+    newSocket.broadcast.emit("mouseBroadcast", dataReceived);
   }
 }

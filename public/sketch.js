@@ -6,6 +6,12 @@ function newConnection() {
   console.log(clientSocket.id);
 }
 
+clientSocket.on("mouseBroadcast", otherMouse);
+function otherMouse(dataReceived) {
+  fill(0, 225);
+  circle(dataReceived.x, dataReceived.y, random(30, 50));
+}
+
 function mouseMoved() {
   let message = {
     x: mouseX,
@@ -20,7 +26,8 @@ function setup() {
   createCanvas(400, 400);
 }
 
+//myMouse
 function draw() {
-  background(220);
+  fill("yellow");
   circle(mouseX, mouseY, 30);
 }
