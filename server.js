@@ -26,5 +26,5 @@ let io = serverSocket(server);
 io.on("connection", newConnection); //in the brackets what event we are waiting for
 
 function newConnection(newSocket) {
-  console.log(newSocket);
+  console.log(newSocket.id);
 }
