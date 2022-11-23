@@ -9,7 +9,7 @@ let app = express();
 
 //Define a port number used to communicate betwen the srver and the host
 
-let port = 3000; //we can't use the same port number for more than 1 service
+let port = process.env.PORT || 3000; //we can't use the same port number for more than 1 service
 
 let server = app.listen(port);
 
