@@ -6,6 +6,16 @@ function newConnection() {
   console.log(clientSocket.id);
 }
 
+function mouseMoved() {
+  let message = {
+    x: mouseX,
+    y: mouseY,
+    id: clientSocket.id,
+  }; //curvy brackets to create an object
+
+  clientSocket.emit("mouse", message);
+}
+
 function setup() {
   createCanvas(400, 400);
 }

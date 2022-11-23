@@ -27,4 +27,9 @@ io.on("connection", newConnection); //in the brackets what event we are waiting 
 
 function newConnection(newSocket) {
   console.log(newSocket.id);
+
+  newSocket.on("mouse", mouseReceived);
+  function mouseReceived(dataReceived) {
+    console.log(dataReceived);
+  }
 }
