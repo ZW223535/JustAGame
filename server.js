@@ -16,3 +16,15 @@ let server = app.listen(port);
 app.use(express.static("public"));
 
 console.log("running server on http://localhost:" + port);
+
+//load the severSocket module
+let serverSocket = require("socket.io");
+
+//io = input output
+let io = serverSocket(server);
+
+io.on("connection", newConnection); //in the brackets what event we are waiting for
+
+function newConnection(newSocket) {
+  console.log(newSocket);
+}
