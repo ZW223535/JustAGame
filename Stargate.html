@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Test</title>
+
+    <link rel="stylesheet" type="text/css" href="style.css" />
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  </head>
+
+  <body>
+    <div id="a" class="loader-wrapper">
+      <span class="loader"><span class="loader-inner"></span></span>
+    </div>
+    <div id="a_testo" class="loader-text" style="font-family: 'Courier';">Sistemando i documenti...</div>
+    <div id="demo" class="loader-text" style="font-family: 'Courier';"></div>
+
+    <script>
+      var myTimeOut = setTimeout("mytimeoutfunction()", 3000);
+      $("#a").mouseout(function () {
+        myTimeOut = setTimeout("mytimeoutfunction()", 3000);
+      });
+
+      var mytimeoutfunction = function () {
+        $("#a").fadeOut("slow");
+      };
+
+      var mytextchangefunction1 = setTimeout("mytextchange1()", 1500);
+      $("#a_testo").mouseout(function () {
+        mytextchangefunction1 = setTimeout("mytextchange1()", 1500);
+      });
+
+      var mytextchange1 = function () {
+        $("#a_testo").fadeOut("slow");
+      };
+    </script>
+    <script>
+      /*Text change 2*/
+      const myTimeout = setTimeout(Testo2, 1900);
+
+      function Testo2() {
+        document.getElementById("demo").innerHTML =
+          "Preparando le registrazioni...";
+      }
+
+      var mytextchangefunction2 = setTimeout("mytextchange2()", 3000);
+      $("#demo").mouseout(function () {
+        mytextchangefunction2 = setTimeout("mytextchange2()", 3000);
+      });
+
+      var mytextchange2 = function () {
+        $("#demo").fadeOut("slow", function() {
+          // This callback function will execute after fadeOut completes
+          // Open the second HTML page here
+          simulateLinkClick('Stargate2.html');
+        });
+      };
+
+      function simulateLinkClick(url) {
+        var anchor = document.createElement('a');
+        anchor.href = url;
+        anchor.style.display = 'none';
+        document.body.appendChild(anchor);
+        anchor.click();
+      }
+    </script>
+  </body>
+</html>
