@@ -1,6 +1,6 @@
 let img;
 let foglio;
-let tvtesto; 
+let tvtesto;
 let tvtesto2;
 let tvtesto3;
 let tvtesto4;
@@ -13,7 +13,7 @@ let youtubeVideo2;
 let youtubeVideo3;
 
 function preload() {
-  img = loadImage("assets/BG.jpeg");
+  img = loadImage("assets/BG.png");
   foglio = loadImage("assets/Paper.png");
 }
 
@@ -31,20 +31,22 @@ function setup() {
 }
 
 function displayPage1() {
-  tvtesto = createP('[Le registrazioni]');
+  tvtesto = createP("[Le registrazioni]");
   tvtesto.position(250, 100);
-  tvtesto.style('font-size', '30px');
-  tvtesto.style('font-family', 'courier');
+  tvtesto.style("font-size", "30px");
+  tvtesto.style("font-family", "courier");
 
-  tvtesto2 = createP('Gli studenti del Polo Bonghi hanno raccontato le storie <br>dei loro parenti, famigliari, amici...<br><br> Ho recuperato i video e i documenti digitali che hanno creato al riguardo. <br> Sono racconti riguardo scelte di vita, grandi decisioni che hanno cambiato <br> il corso della loro esistenza...');
+  tvtesto2 = createP(
+    "Gli studenti del Polo Bonghi hanno raccontato le storie <br>dei loro parenti, famigliari, amici...<br><br> Ho recuperato i video e i documenti digitali che hanno creato al riguardo. <br> Sono racconti riguardo scelte di vita, grandi decisioni che hanno cambiato <br> il corso della loro esistenza..."
+  );
   tvtesto2.position(250, 300);
-  tvtesto2.style('font-size', '20px');
-  tvtesto2.style('font-family', 'courier');
+  tvtesto2.style("font-size", "20px");
+  tvtesto2.style("font-family", "courier");
 
-  tvtesto3 = createP('1/3');
+  tvtesto3 = createP("1/3");
   tvtesto3.position(250, windowHeight - windowHeight / 5);
-  tvtesto3.style('font-size', '20px');
-  tvtesto3.style('font-family', 'courier');
+  tvtesto3.style("font-size", "20px");
+  tvtesto3.style("font-family", "courier");
 
   let centerXtv = windowWidth - windowWidth / 6;
   let next1width = 80;
@@ -52,7 +54,7 @@ function displayPage1() {
   next1 = createButton("⭢");
   next1.position(centerXtv - next1width / 2, windowHeight - windowHeight / 5);
   next1.mousePressed(nextPage1);
-  next1.class('custom-button');
+  next1.class("custom-button");
 }
 
 function nextPage1() {
@@ -61,22 +63,28 @@ function nextPage1() {
   tvtesto3.remove();
   next1.remove();
 
-   // Embedded YouTube video 1
-youtubeVideo1 = createDiv('<iframe width="355" height="200" src="https://www.youtube.com/embed/r58JSBurJ24?si=ujBTBnJOXaGdvUtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-   youtubeVideo1.position(200, 100);
- 
-   // Embedded YouTube video 2
-    youtubeVideo2 = createDiv('<iframe width="355" height="200" src="https://www.youtube.com/embed/r58JSBurJ24?si=ujBTBnJOXaGdvUtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-   youtubeVideo2.position(200, windowHeight/2);
+  // Embedded YouTube video 1
+  youtubeVideo1 = createDiv(
+    '<iframe width="355" height="200" src="https://www.youtube.com/embed/r58JSBurJ24?si=ujBTBnJOXaGdvUtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+  );
+  youtubeVideo1.position(200, 100);
 
-    youtubeVideo3 = createDiv('<iframe width="355" height="200" src="https://www.youtube.com/embed/r58JSBurJ24?si=ujBTBnJOXaGdvUtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>');
-   youtubeVideo3.position(355 + 250, windowHeight/2);
+  // Embedded YouTube video 2
+  youtubeVideo2 = createDiv(
+    '<iframe width="355" height="200" src="https://www.youtube.com/embed/r58JSBurJ24?si=ujBTBnJOXaGdvUtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+  );
+  youtubeVideo2.position(200, windowHeight / 2);
+
+  youtubeVideo3 = createDiv(
+    '<iframe width="355" height="200" src="https://www.youtube.com/embed/r58JSBurJ24?si=ujBTBnJOXaGdvUtv" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+  );
+  youtubeVideo3.position(355 + 250, windowHeight / 2);
 
   // Creating elements for the second page
-  tvtesto4 = createP('2/3');
-  tvtesto4.position(250, windowHeight- windowHeight/5);
-  tvtesto4.style('font-size', '20px');
-  tvtesto4.style('font-family', 'courier');
+  tvtesto4 = createP("2/3");
+  tvtesto4.position(250, windowHeight - windowHeight / 5);
+  tvtesto4.style("font-size", "20px");
+  tvtesto4.style("font-family", "courier");
 
   let centerXtv = windowWidth - windowWidth / 6;
   let next1width = 80;
@@ -84,86 +92,92 @@ youtubeVideo1 = createDiv('<iframe width="355" height="200" src="https://www.you
   previous = createButton("⭠");
   previous.position(centerXtv - 200 / 2, windowHeight - windowHeight / 5);
   previous.mousePressed(prev);
-  previous.class('custom-button');
+  previous.class("custom-button");
 
   next2 = createButton("⭢");
   next2.position(centerXtv - next1width / 2, windowHeight - windowHeight / 5);
   next2.mousePressed(nextPage2);
-  next2.class('custom-button');
+  next2.class("custom-button");
 }
 
 function prev() {
-       clearPage2();
-       displayPage1();
-    }
+  clearPage2();
+  displayPage1();
+}
 
 function clearPage2() {
-    if (tvtesto) tvtesto.remove();
-    if (tvtesto2) tvtesto2.remove();
-    if (tvtesto3) tvtesto3.remove();
-    if (tvtesto4) tvtesto4.remove();
-    if (youtubeVideo3) youtubeVideo3.remove();
-    if (youtubeVideo2) youtubeVideo2.remove();
-    if (youtubeVideo1) youtubeVideo1.remove();
-    if (next1) next1.remove();
-    if (next2) next2.remove();
-    if (currentPage > 1 && previous) previous.remove(); // Check if previous exists and currentPage is not 1
-  }
+  if (tvtesto) tvtesto.remove();
+  if (tvtesto2) tvtesto2.remove();
+  if (tvtesto3) tvtesto3.remove();
+  if (tvtesto4) tvtesto4.remove();
+  if (youtubeVideo3) youtubeVideo3.remove();
+  if (youtubeVideo2) youtubeVideo2.remove();
+  if (youtubeVideo1) youtubeVideo1.remove();
+  if (next1) next1.remove();
+  if (next2) next2.remove();
+  if (currentPage > 1 && previous) previous.remove(); // Check if previous exists and currentPage is not 1
+}
 
+function nextPage2() {
+  clearPage2();
 
-  function nextPage2() {
-   clearPage2()
-  
-  tvtestofinale = createP('...Ma non può essere solo questo ciò che accomuna e ha reso speciali <br> questi ragazzi, deve esserci altro...');
+  tvtestofinale = createP(
+    "...Ma non può essere solo questo ciò che accomuna e ha reso speciali <br> questi ragazzi, deve esserci altro..."
+  );
   tvtestofinale.position(250, 300);
-  tvtestofinale.style('font-size', '20px');
-  tvtestofinale.style('font-family', 'courier');
+  tvtestofinale.style("font-size", "20px");
+  tvtestofinale.style("font-family", "courier");
 
-    tvtesto5 = createP('3/3');
-    tvtesto5.position(250, windowHeight- windowHeight/5);
-    tvtesto5.style('font-size', '20px');
-    tvtesto5.style('font-family', 'courier');
-  
+  tvtesto5 = createP("3/3");
+  tvtesto5.position(250, windowHeight - windowHeight / 5);
+  tvtesto5.style("font-size", "20px");
+  tvtesto5.style("font-family", "courier");
+
   let centerXtv = windowWidth - windowWidth / 6;
   let next1width = 80;
 
-    previous2 = createButton("⭠");
-    previous2.position(centerXtv - 200 / 2, windowHeight - windowHeight / 5);
-    previous2.mousePressed(prev2);
-    previous2.class('custom-button');
-  
-    closebutton = createButton("Chiudi");
-    closebutton.position(centerXtv - next1width / 2, windowHeight - windowHeight / 5);
-    closebutton.mousePressed(closeit);
-    closebutton.class('custom-button');
-  }
+  previous2 = createButton("⭠");
+  previous2.position(centerXtv - 200 / 2, windowHeight - windowHeight / 5);
+  previous2.mousePressed(prev2);
+  previous2.class("custom-button");
 
-function prev2(){
-    clearPage3();
-    nextPage1();
+  closebutton = createButton("Chiudi");
+  closebutton.position(
+    centerXtv - next1width / 2,
+    windowHeight - windowHeight / 5
+  );
+  closebutton.mousePressed(closeit);
+  closebutton.class("custom-button");
 }
 
-function clearPage3(){
-    if (tvtesto) tvtesto.remove();
-    if (tvtesto2) tvtesto2.remove();
-    if (tvtesto3) tvtesto3.remove();
-    if (tvtesto4) tvtesto4.remove();
-    if (tvtesto5) tvtesto5.remove();
-    if (youtubeVideo3) youtubeVideo3.remove();
-    if (youtubeVideo2) youtubeVideo2.remove();
-    if (youtubeVideo1) youtubeVideo1.remove();
-    if (tvtestofinale) tvtestofinale.remove();
-    if (next1) next1.remove();
-    if (next2) next2.remove(); if (closebutton) closebutton.remove();
-    if (currentPage > 2 && previous2) previous2.remove(); // Check if previous exists and currentPage is not 1
+function prev2() {
+  clearPage3();
+  nextPage1();
 }
 
-  function closeit(){window.open('Stargate2.html','_self')}
+function clearPage3() {
+  if (tvtesto) tvtesto.remove();
+  if (tvtesto2) tvtesto2.remove();
+  if (tvtesto3) tvtesto3.remove();
+  if (tvtesto4) tvtesto4.remove();
+  if (tvtesto5) tvtesto5.remove();
+  if (youtubeVideo3) youtubeVideo3.remove();
+  if (youtubeVideo2) youtubeVideo2.remove();
+  if (youtubeVideo1) youtubeVideo1.remove();
+  if (tvtestofinale) tvtestofinale.remove();
+  if (next1) next1.remove();
+  if (next2) next2.remove();
+  if (closebutton) closebutton.remove();
+  if (currentPage > 2 && previous2) previous2.remove(); // Check if previous exists and currentPage is not 1
+}
+
+function closeit() {
+  window.open("Stargate2.html", "_self");
+}
 
 function windowResized() {
   resizeCanvas(windowWidth, windowHeight);
 }
-
 
 /*let videoAlpha, videoBeta, videoOmega, videoPinco, videoPallo;
 let playButtonAlpha, playButtonBeta, playButtonOmega, playButtonPinco, playButtonPallo;
