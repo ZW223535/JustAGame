@@ -20,6 +20,40 @@
   </head>
 
   <body>
+    <div id="wrapper">
+      <div id="dragable_content">
+        <img
+          id="bachecaBG"
+          draggable="false"
+          src="assets/BachecaBG.png"
+          style="width: 120%"
+        />
+      </div>
+    </div>
+    <div id="sfondo_loader" class="loader-wrapper"></div>
+    <div id="a_testo" class="bacheca-note" style="font-family: 'Courier'">
+      ← Trascina il cursore per navigare la bacheca →
+    </div>
+
     <script src="bacheca.js" defer></script>
+    <script>
+      var mytextchangefunction1 = setTimeout("fadeloader()", 5000);
+      $("#sfondo_loader").mouseout(function () {
+        mytextchangefunction1 = setTimeout("fadeloader()", 5000);
+      });
+
+      var fadeloader = function () {
+        $("#sfondo_loader").fadeOut("slow");
+      };
+
+      var mytextchangefunction2 = setTimeout("fadetesto()", 5000);
+      $("#a_testo").mouseout(function () {
+        mytextchangefunction2 = setTimeout("fadetesto()", 5000);
+      });
+
+      var fadetesto = function () {
+        $("#a_testo").fadeOut("slow");
+      };
+    </script>
   </body>
 </html>

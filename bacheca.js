@@ -1,13 +1,28 @@
-let img;
+document.body.style.overflow = "hidden";
 
-function preload() {
-  img = loadImage("assets/BachecaBG.png");
+let _startX = 0,
+  _startY = 0,
+  _scrollTop = 0,
+  _scrollLeft = 0;
+
+document.onmousedown = OnMouseDown;
+document.onmouseup = OnMouseUp;
+
+function OnMouseDown(event) {
+  document.onmousemove = OnMouseMove;
+  _startX = event.clientX;
+  _startY = event.clientY;
+  _scrollTop = document.documentElement.scrollTop;
+  _scrollLeft = document.documentElement.scrollLeft;
 }
 
-function setup() {
-  createCanvas(windowWidth, img.height);
+function OnMouseMove(event) {
+  window.scrollTo({
+    left: _scrollLeft + (_startX - event.clientX),
+    top: _scrollTop + (_startY - event.clientY),
+  });
 }
 
-function draw() {
-  background(img);
+function OnMouseUp() {
+  document.onmousemove = null;
 }

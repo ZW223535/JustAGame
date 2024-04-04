@@ -19,6 +19,7 @@ canvas {
   justify-content: center;
   align-items: center;
   color: #fff;
+  opacity: 80%;
 }
 
 .loader {
@@ -43,6 +44,15 @@ canvas {
   color: #ffffff;
   text-align: center;
   top: 60%;
+}
+
+.bacheca-note {
+  color: #ffffff;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  top: 50%;
 }
 
 @keyframes loader {
@@ -136,4 +146,11 @@ canvas {
   color: white;
   font-size: 24px;
   font-family: Arial, sans-serif;
+}
+
+.div1 {
+  position: absolute;
+  height: 100%;
+  width: 200%;
+  z-index: 1;
 }
